@@ -15,7 +15,5 @@ db.register(function SIN(a) {return Math.sin(a)});
 console.log(__dirname)
 
 module.exports.getNearest = function (lat, lon) {
-    const nearest = db.prepare(queries.nearestLocation).get(lat,lon)
-    console.log(nearest)
-    return nearest
+    return db.prepare(queries.nearestLocation).all(lat,lon)
 }
