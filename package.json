@@ -1,0 +1,27 @@
+{
+  "name": "fatlamacodetest",
+  "version": "1.0.0",
+  "description": "A search API built off of a sqlite3 database",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DMPS/FatLamaCodeTest.git"
+  },
+  "author": "Dalton Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DMPS/FatLamaCodeTest/issues"
+  },
+  "homepage": "https://github.com/DMPS/FatLamaCodeTest#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  }
+}
