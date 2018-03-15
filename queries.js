@@ -1,5 +1,5 @@
 const Queries = {
-    nearestLocation: `SELECT item_name,lat, lng, item_url,img_urls
+    nearestLocation: `SELECT *
     FROM (
         SELECT z.item_name, z.lat, z.lng, z.item_url, z.img_urls, p.radius,p.distance_unit
             * DEGREES(ACOS(COS(RADIANS(p.lat))
@@ -21,7 +21,11 @@ const Queries = {
     ) AS d
     WHERE distance <= radius
     ORDER BY distance
-    LIMIT 20`
+    LIMIT 20`,
+    matchText: `SELECT *
+    FROM items 
+        WHERE item_name LIKE ?
+        ORDER BY item_name;`
 }
 
 module.exports = Queries
