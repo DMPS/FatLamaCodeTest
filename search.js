@@ -24,3 +24,7 @@ module.exports.getNearest = function (lat, lon) {
 module.exports.getMatchingText = function(searchTerm){
     return db.prepare(queries.matchText).all(`%${searchTerm}%`)
 }
+
+module.exports.fullSearch = function(lat,lon,searchTerm) {
+    return db.prepare(queries.fullSearch).all(lat,lon,`%${searchTerm}%`)
+}

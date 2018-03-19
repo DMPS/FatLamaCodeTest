@@ -6,7 +6,14 @@ const app = express();
 app.use(bodyParser.json())
 
 app.get('/search', (req, res) => {
-    // res.send(search.getNearest(req.query.lat, req.query.lng))
+    res.send(search.fullSearch(req.query.lat,req.query.lng,req.query.searchTerm))
+});
+
+app.get('/search/location', (req, res) => {
+    res.send(search.getNearest(req.query.lat,req.query.lng))
+});
+
+app.get('/search/text', (req, res) => {
     res.send(search.getMatchingText(req.query.searchTerm))
 });
 
